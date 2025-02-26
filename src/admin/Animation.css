@@ -1,0 +1,160 @@
+/* Container principal qui couvre toute la page */
+.loading-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.6); /* Fond semi-transparent */
+    z-index: 9999;
+    overflow: hidden; /* Pour éviter tout débordement */
+  }
+  
+  /* Contenu centré de l'animation */
+  .loading-content {
+    text-align: center;
+    color: #fff; /* Texte en blanc pour une bonne lisibilité */
+    font-family: 'Arial', sans-serif;
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* Le texte principal */
+  .loading-content span {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    display: block;
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  /* La barre de chargement */
+  .progress-bar-container {
+    width: 80%;
+    margin: 10%;
+    height: 8px;
+    background-color: #444;
+    margin-top: 20px;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .progress-bar {
+    width: 0;
+    height: 100%;
+    background-color: #ff7b47; /* Couleur verte pour la progression */
+    animation: loadingProgress 5s linear forwards; /* Animé sur 6s */
+  }
+  
+  /* Animation de la progression de la barre */
+  @keyframes loadingProgress {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+  
+  /* Animation d'apparition du texte */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  /* Animation des étoiles qui bougent */
+  @keyframes moveStars {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(100vw);
+    }
+  }
+  
+  .stars {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+  }
+  
+  .star {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: #fff;
+    animation: moveStars 10s linear infinite;
+  }
+  
+  .star:nth-child(odd) {
+    animation-duration: 7s;
+  }
+  
+  .star:nth-child(even) {
+    animation-duration: 5s;
+  }
+  
+  /* Animation des cercles */
+  .circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #ffef3d; /* Couleur orangée */
+    animation: expandCircle 6s ease-in-out infinite; /* Animation sur 6s */
+  }
+  
+  @keyframes expandCircle {
+    0% {
+      transform: scale(0);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.5);
+      opacity: 0.7;
+    }
+    100% {
+      transform: scale(0);
+      opacity: 0;
+    }
+  }
+  
+  /* Effets de particules animées */
+  .particle {
+    position: absolute;
+    background-color: #fff;
+    border-radius: 50%;
+    width: 6px;
+    height: 6px;
+    animation: moveParticles 8s linear infinite;
+  }
+  
+  @keyframes moveParticles {
+    0% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    50% {
+      transform: translateY(-200px);
+      opacity: 0.5;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }

@@ -1,0 +1,154 @@
+body {
+    background-color: #181818;
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.login-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100vh;
+    padding: 0 5%;
+    position: relative;
+    flex-wrap: wrap; /* Ajouté pour permettre l'ajustement en colonnes sur petits écrans */
+}
+
+.left-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    padding-right: 10%;
+}
+
+.phone-image {
+    width: 300px;
+    max-width: 100%; /* Ajouté pour que l'image soit responsive */
+}
+
+.right-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 10%;
+}
+
+.role-selection {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 5%;
+}
+
+.radio-admin {
+    accent-color: #FF6600;
+}
+
+.radio-caissier {
+    accent-color: #FF6600;
+}
+
+.label-admin, .label-caissier {
+    font-size: 18px;
+    font-weight: bolder;
+}
+
+.code-input {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    margin-left: -20%;
+}
+
+.code-label {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.password-field {
+    padding: 3px;
+    border-radius: 10px;
+    margin-left: 10px;
+    border: none;
+    width: 150px;
+    text-align: center;
+    background: white;
+    color: black;
+    font-weight: bold;
+}
+
+.bottom-bar {
+    width: 90%;
+    height: 8px;
+    background-color: #FF6600;
+    position: absolute;
+    bottom: 20px;
+    border-radius: 5px;
+    left: 5%;
+}
+
+/* Media Queries pour la Responsivité */
+
+@media (max-width: 760px) {
+      
+    .login-container {
+        margin-top: 10%;
+        height: auto; /* Ajustement de la hauteur */
+        padding: 0 10%;
+    }
+
+    .left-section {
+        flex: none;
+        width: 100%;
+        padding: 0;
+    }
+
+    .phone-image {
+        width: 200px; /* L'image devient plus petite sur les petits écrans */
+        margin-bottom: 20px; /* Espacement sous l'image */
+    }
+
+    .role-selection {
+        flex-direction: column; /* Les rôles seront affichés en colonne */
+        gap: 10px;
+    }
+
+    .code-input {
+        margin-left: 0; /* Réinitialisation de l'alignement */
+        flex-direction: column; /* Disposition verticale sur petits écrans */
+    }
+
+    .password-field {
+        width: 100%; /* Le champ de mot de passe prend toute la largeur sur petit écran */
+    }
+
+    .bottom-bar {
+        width: 100%;
+        margin-top: 50px; 
+        position: relative;
+        /* Réduit la largeur de la barre en bas pour les petits écrans */
+    }
+}
+
+@media (max-width: 480px) {
+    .login-container {
+        margin-top: 10%;
+        height: auto; /* Ajustement de la hauteur */
+        padding: 0 10%;
+    }
+    .label-admin, .label-caissier {
+        font-size: 16px; /* Réduction de la taille de la police sur petits écrans */
+    }
+
+    .code-label {
+        font-size: 16px; /* Réduction de la taille de la police pour le label */
+    }
+
+    .password-field {
+        font-size: 14px; /* Réduction de la taille de la police pour le champ de mot de passe */
+    }
+}
