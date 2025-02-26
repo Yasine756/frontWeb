@@ -1,4 +1,7 @@
-import { MoreVertical, ChevronLast, ChevronFirst, Home, User, Mail,Plus } from "lucide-react";
+import {  ChevronLast, ChevronFirst, 
+  ChartColumn , Utensils,  BookOpen ,BadgePercent, 
+  History,ClipboardCheck  , Store , 
+  Users  } from "lucide-react";
 import { NavLink } from "react-router-dom";
 import { useContext, createContext, useState, ReactNode } from "react";
 import logo from '../assets/logo.png'
@@ -37,10 +40,14 @@ export default function SideBarre({ children }: SidebarProps) {
 
         <SidebarContext.Provider value={{ expanded }}>
           <ul className="sidebar__menu">
-            <SidebarItem icon={<Home size={20} />} text="Accueil Admin" to="/admin" />
-            <SidebarItem icon={<User size={20} />} text="Accueil Caissier" to="/caissier" />
-            <SidebarItem icon={<Mail size={20} />} text="Contact Admin" to="/admin/contact" />
-            <SidebarItem icon={<Plus size={20} />} text="Add yassine" to="/admin/yassine" />
+            <SidebarItem icon={<ChartColumn size={20} />} text="Dashborad" to="/admin" />
+            <SidebarItem icon={<Utensils size={20} />} text="Commandes" to="/caissier" />
+            <SidebarItem icon={<BookOpen  size={20} />} text="Menu" to="/admin/contact" />
+            <SidebarItem icon={<BadgePercent  size={20} />} text="Promotions" title='promos' to="/admin/Promotions" />
+            <SidebarItem icon={<History  size={20} />} text="Historique" to="/admin/Historique" />
+            <SidebarItem icon={<Users  size={20} />} text="Clients" to="/admin/Clients" />
+            <SidebarItem icon={<Store  size={20} />} text="My_Resto" to="/admin/Clients" />
+            <SidebarItem icon={< ClipboardCheck   size={20} />} text="caissiers" to="/admin/yassine" />
             
           </ul>
         </SidebarContext.Provider>
@@ -69,6 +76,7 @@ interface SidebarItemProps {
   icon: ReactNode;
   text: string;
   to: string;
+  title?: string;
 }
 
 export function SidebarItem({ icon, text, to }: SidebarItemProps) {
